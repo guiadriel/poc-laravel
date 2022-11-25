@@ -23,27 +23,9 @@
     </head>
     <body class="antialiased">
         <div id="app">
-
             @include("layouts.navbar")
 
-            <section class="mb-4">
-                <v-list />
-            </section>
-
-            <div class="container mb-4">
-                <div class="row">
-                    @foreach ($courses as $course )
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="{{$course["image"]}}" class="card-img-top mx-auto py-4" alt="..." style="max-width:50px">
-                                <div class="card-body">
-                                <p class="card-text">{{$course["description"]}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
+            @yield("content")
         </div>
 
         @vite(['resources/js/app.js'])

@@ -22,6 +22,9 @@ app.component('v-signin', SignInModal);
 import List from './components/List.vue';
 app.component('v-list', List);
 
+import ListMix from './components/ListMix.vue';
+app.component('list-mix', ListMix);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

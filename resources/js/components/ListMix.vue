@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">List (Vue)</div>
+                    <div class="card-header">ListMix (Vue)</div>
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group-item" v-for="item in list" :key="item.id">
@@ -36,9 +36,14 @@
     import axios from 'axios';
 
     export default {
+        props: {
+            posts: {
+                type: String,
+            }
+        },
         data() {
             return {
-                list: [],
+                list: JSON.parse(this.posts) || [],
                 page: 0,
                 loading: false,
             }
@@ -56,7 +61,7 @@
             }
         },
         mounted() {
-            this.handleLoadMore();
+            // this.handleLoadMore();
         }
     }
 </script>
