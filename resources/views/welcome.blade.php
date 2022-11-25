@@ -23,6 +23,9 @@
     </head>
     <body class="antialiased">
         <div id="app">
+
+
+
             <nav class="navbar bg-info mb-4">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">Navbar</a>
@@ -35,9 +38,14 @@
                 </div>
             </nav>
 
+
+
             <section class="mb-4">
                 <v-list />
             </section>
+
+
+
 
             <div class="container mb-4">
                 <div class="row">

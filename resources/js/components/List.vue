@@ -48,12 +48,8 @@
                 this.page++;
                 const skip = this.page * 5;
                 this.loading = true;
-
                 await new Promise(r => setTimeout(r, 1200));
-
-
                 const response = await axios.get(`https://dummyjson.com/posts?limit=5&skip=${skip}`)
-
                 const { posts } = response.data;
                 this.list.push(...posts);
                 this.loading = false;

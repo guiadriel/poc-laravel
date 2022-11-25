@@ -24,6 +24,7 @@ export default defineConfig({
     resolve: {
         alias: {
             vue: 'vue/dist/vue.esm-bundler.js',
+            "bootstrap-module": "bootstrap/dist/js/bootstrap.esm.js"
         },
     },
 });
