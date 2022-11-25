@@ -3,15 +3,19 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">List</div>
+                    <div class="card-header">List (Vue)</div>
                     <div class="card-body">
-                        <ul>
-                            <li v-for="item in list" :key="item.id">
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="item in list" :key="item.id">
                                 {{ item.title }}
                             </li>
                         </ul>
                         <div v-if="loading">
-                            Carregando resultados...
+                            <p class="card-text placeholder-glow">
+                                <span class="placeholder d-block col-7 mb-2 mt-2" ></span>
+                                <span class="placeholder d-block col-4 mb-2" ></span>
+                                <span class="placeholder d-block col-6 " ></span>
+                            </p>
                         </div>
                         <div v-else>
                             <div class="d-flex justify-content-center">
@@ -44,6 +48,10 @@
                 this.page++;
                 const skip = this.page * 5;
                 this.loading = true;
+
+                await new Promise(r => setTimeout(r, 1200));
+
+
                 const response = await axios.get(`https://dummyjson.com/posts?limit=5&skip=${skip}`)
 
                 const { posts } = response.data;

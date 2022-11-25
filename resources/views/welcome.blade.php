@@ -23,16 +23,36 @@
     </head>
     <body class="antialiased">
         <div id="app">
-            <nav class="navbar bg-light">
+            <nav class="navbar bg-info mb-4">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">Navbar</a>
+
                     <button type="button"
                         class="btn btn-primary"
-                        @click="$refs.signin.toggleModal()">Entrar</button>
+                        @click="$refs.signin.toggleModal()">Entrar (Vue)</button>
                     <v-signin ref="signin"/>
+
                 </div>
             </nav>
-            <v-list />
+
+            <section class="mb-4">
+                <v-list />
+            </section>
+
+            <div class="container mb-4">
+                <div class="row">
+                    @foreach ($courses as $course )
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="{{$course["image"]}}" class="card-img-top mx-auto py-4" alt="..." style="max-width:50px">
+                                <div class="card-body">
+                                <p class="card-text">{{$course["description"]}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
 
         @vite(['resources/js/app.js'])
